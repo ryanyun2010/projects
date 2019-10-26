@@ -24,14 +24,18 @@
       }
       .three-row{
 	  text-align:center;
-	  color:#505d61;
+	  
 	  line-height:25px;
 	  display:inline-block;
 	  height:60vh;
 	  width:32vw;
 	  font-size:2rem;
       }
-      #three-row-container{
+      .three-row a{
+          text-decoration: none;
+          color:#505d61;
+      }
+      .three-row-container,#drawing-container{
 	  width:97vw;
 	  margin:auto;:
       }
@@ -57,7 +61,9 @@
       h2{
 	  font-size:3rem;
       }
-      
+      #panda{
+          width:32vw;
+      }
     </style>
     </head>
   <body>
@@ -66,12 +72,20 @@
 <p class="intro">I'm Ryan. I love pandas. I like coding and making websites.</p></div>
 <div id="web">
   <h2>Websites</h2>
-  <div id="three-row-container">
+  <div class="three-row-container">
     <div class="three-row three-row-light"><br><br><a href="https://ryan1.wisen.space/ryanpanda.html">Panda Land</a></div>
 	<div class="three-row three-row-dark"><br><br><a href="https://ryanyun2010.github.io/connect-four/">Connect Four</a></div>
 	<div class="three-row three-row-light"><br><br><a href="https://ryan1.wisen.space/emo.html">Emotion Detector</a></div>
 </div>
 
 </div>
+<div id="drawings">
+    <div id="drawing-container">
+  <img src="pandas.jpg" id="panda">
+</div>
+</div>
+  
+</div>
   </body>
 </html>
+      
