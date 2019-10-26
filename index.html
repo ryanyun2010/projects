@@ -35,11 +35,18 @@
       }
       .three-row a{
           text-decoration: none;
-          color:#505d61;
+          color:#000000;
+          font-size:2.5rem
       }
-      .three-row-container,.drawing-container{
+      .drawing-container{
 	  width:97vw;
 	  margin:auto;
+      }
+      .three-row-container{
+          display:grid;
+          grid-template-columns: auto auto auto;
+  grid-template-rows: 60%;
+  margin:auto
       }
       #intro{
 	  background-color:#121212;
@@ -66,7 +73,11 @@
       img{
           width:32vw;
       }
+      .three-row p {
+          font-size:1rem;
+          color:#343434;
 
+      }
     </style>
     </head>
   <body>
@@ -76,9 +87,35 @@
 <div id="web">
   <h2>Coding Projects</h2>
   <div class="three-row-container">
-    <div class="three-row three-row-light"><br><br><a href="https://ryan1.wisen.space/ryanpanda.html">Panda Land</a></div>
-	<div class="three-row three-row-dark"><br><br><a href="https://ryanyun2010.github.io/connect-four/">Connect Four</a></div>
-	<div class="three-row three-row-light"><br><br><a href="https://ryan1.wisen.space/emo.html">Emotion Detector</a></div>
+    <div class="three-row three-row-light">
+        <br>
+        <br>
+        <a href="https://ryan1.wisen.space/ryanpanda.html">Panda Land</a><br><br><br>
+        <p>Panda Land is a game where you collect things. You can collect stick of bamboo and guns. You take damage if you go under bushes<br>
+            Controls:<br>
+            up,down,left,right : Movement<br>
+            1,2 : Slot 1 and 2
+            </p>
+    </div>
+    
+	<div class="three-row three-row-dark">
+        <br>
+        <br>
+        <a href="https://ryanyun2010.github.io/connect-four/">Connect Four</a><br><br><br>
+        <p>
+                Connect Four has gravity so you can only place them at the bottom.<br>
+                Controls:<br>
+                left,right : Movement<br>
+                enter/return : Drop
+            </p>
+    </div>
+    
+	<div class="three-row three-row-light">
+        <br>
+        <br>
+        <a href="https://ryan1.wisen.space/emo.html">Emotion Detector</a><br><br><br>
+        <p>Emotion Detector detects your emotion. Press start video to start you camera. Then when you want it to analyze you emotion click capture. If you want it to reanalyze the click retake and capture again. The first time you capture it may take 20-40 seconds</p>
+    </div>
 </div>
 
 </div>
