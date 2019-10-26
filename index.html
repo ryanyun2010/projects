@@ -72,12 +72,21 @@
 	  font-size:2.5rem;
       }
       img{
-          width:32vw;
+          width:100%;
       }
       .three-row p {
           font-size:1rem;
           color:#343434;
 
+      }
+      a:hover{
+        color:#FC651C;
+      }
+      .two-row-container{
+          display:grid;
+          grid-template-columns:50% 50%;
+  grid-template-rows: 35%;
+  margin:auto
       }
     </style>
     </head>
@@ -133,7 +142,9 @@
         <img src="person.jpg">
       </div>
 </div>
-  
+  <div class="two-row-container">
+      <img src="frog.jpg"><img src="dragon.jpg">
+  </div>
 </div>
   </body>
 </html>
