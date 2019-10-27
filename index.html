@@ -40,9 +40,11 @@
       .three-row a{
           text-decoration: none;
           color:#000000;
-          font-size:2.5rem
+          font-size:2.5rem;
       }
-      
+     a{
+        text-decoration: none;
+     } 
       .three-row-container,.drawing-container{
           display:grid;
           grid-template-columns: auto auto auto;
@@ -80,6 +82,8 @@
       }
       a:hover{
         color:#FC651C;
+        font-weight:bold;
+        
       }
       .two-row-container{
           display:grid;
@@ -93,14 +97,32 @@
           left:46%;
 
       }
+      nav{
+        
+        width:100%; position:fixed; top:0px;height:3.5%; text-align:right;
+        background-color:#33333399;
+      }
+      nav a{
+        font-family: arial;
+        color:white;
+        margin-right:20px;
+        font-size:0.8rem;
+      }
+      nav a:hover{
+          font-weight: 900;
+      }
     </style>
     </head>
   <body>
-      
+      <nav>
+          <a href="#intro">Home</a>
+          <a href="#web">Coding Projects</a>
+          <a href="#drawings">Drawings</a>
+      </nav>
     <div id="intro">
     <h1><span class="orange">Welcome</span> To Ryan The Panda's Website</h1>
-<p class="intro">I'm Ryan. I love pandas. I like coding and making websites.</p>
-<img src="panda.gif" id="picon">
+<p class="intro">I'm Ryan. I love pandas. I like coding and making websites. I also enjoy drawing</p>
+    <!--<img src="panda.gif" id="picon">!-->
 </div>
 <div id="web">
   <h2>Coding Projects</h2>
