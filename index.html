@@ -2,6 +2,7 @@
   <head>
         <link href="https://fonts.googleapis.com/css?family=Amiri&display=swap" rel="stylesheet">
     <style>
+      
             *{
 		margin:0;
 		box-sizing: border-box;
@@ -128,9 +129,30 @@ z-index:1000000000000000000000000000000000;
 
         z-index:100000000000000;
       }
+      #warning{
+        display:none;
+        width:100vw;
+        height:100vh;
+        background-color:#33333399;
+      }
+
+      #warning h4{
+        font-size:3.5rem;
+        width:40%;
+        text-align:center;
+        left:30%;
+        top:30%;
+      }
+      @media (orientation:protrait) {
+        #warning{
+          display:block;
+        }
+      }
+
     </style>
     </head>
   <body>
+    <div id="warning"><h4>Use In Landscape Orientation</h4></div>
     <div id="icon"><img src="Logo.png" id="iimg"></div>
       <nav>
           <a href="#intro">Home</a>
