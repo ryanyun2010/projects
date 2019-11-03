@@ -140,11 +140,13 @@ z-index:1000000000000000000000000000000000;
       }
       footer{
         height:3%;
+        
       }
       footer p{
         text-align:center;
         color:#999999;
         margin-top:10px;
+        margin-bottom:10px;
       }
 
       @media screen and (orientation:portrait) {
@@ -199,7 +201,7 @@ z-index:1000000000000000000000000000000000;
         <br>
         <br>
         <a href="https://ryan1.wisen.space/emo.html">Emotion Detector</a><br><br><br>
-        <p>Emotion Detector detects your emotion. Press start video to start you camera. Then when you want it to analyze you emotion click capture. If you want it to reanalyze the click retake and capture again. The first time you capture it may take 20-40 seconds</p>
+        <p>Emotion Detector detects your emotion. Press start video to start your camera. Then when you want it to analyze you emotion click capture. If you want it to reanalyze the click retake and capture again. The first time you capture it may take 20-40 seconds</p>
     </div>
 </div>
 
@@ -207,7 +209,7 @@ z-index:1000000000000000000000000000000000;
 <div id="drawings">
     <h2>Drawings</h2>
     <div class="drawing-container">
-  <img src="pandas.jpg">
+  <img src="pandas.jpg" id="pandadrawing">
   <img src="fruits.jpg">
   <img src="owl.jpg">
 </div>
@@ -228,6 +230,16 @@ z-index:1000000000000000000000000000000000;
   <p>Copyright 2019 Ryan Yun</p>
 
 </footer>
+
+<script>
+var panda=document.getElementById("pandadrawing");
+panda.addEventListener('click',function(){
+  panda.style.width="74vw";
+  panda.style.height="auto";
+  panda.style.position="absolute";
+  panda.style.left="8vw";
+})
+</script>
 </body>
 </html>
       
