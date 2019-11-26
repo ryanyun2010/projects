@@ -98,7 +98,7 @@
         
         width:100%; position:fixed; top:0px;height:3.5%; text-align:right;
         background-color:#33333399;
-z-index:1000000000000000000000000000000000;
+z-index:10000;
       }
       nav a{
         font-family: arial;
@@ -148,16 +148,98 @@ z-index:1000000000000000000000000000000000;
         margin-top:10px;
         margin-bottom:10px;
       }
+      #fadeout{
+	  background-color:#111111ef;
+	  height:100vh;
+	  position:fixed;
+	  top:0px;
+	  left:0px;
+	  width:100vw;
+	  z-index:99999;
+      }
+      #fullscreenimage{
+height:100vh;
+	  position:fixed;
+	  top:0px;
+	  left:0px;
+	  width:100vw;
+      }
+      #full{
+	  height:90vh;
+	  width:auto;
+	  left:5vw;
+	  position:fixed;
+	  top:5vw;
+	  z-index:9999999;
+      }
+      #close{
+	  position:fixed;
+	  right:3vw;
+	  top:3vw;
+	  font-size:2rem;
+	  z-index:10000000;
+	  color:red;
+	  background:transparent;
+	  border:none;
+      }
+      #myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
 
       @media screen and (orientation:portrait) {
         div#warning{
           display:block;
         }
       }
-
-    </style>
+          </style>
     </head>
   <body>
+    <div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
     <div id="warning"><h4>Use In Landscape Orientation</h4></div>
     
       <nav>
@@ -170,7 +252,8 @@ z-index:1000000000000000000000000000000000;
     <h1><span class="orange">Welcome</span> To Ryan The Panda's Website</h1>
 <p class="intro">I'm Ryan. I love pandas. I like coding and making websites. I also enjoy drawing.</p>
     <!--<img src="panda.gif" id="picon">!-->
-</div>
+    </div>
+ 
 <div id="web">
   <h2>Coding Projects</h2>
   <div class="three-row-container">
@@ -210,17 +293,17 @@ z-index:1000000000000000000000000000000000;
     <h2>Drawings</h2>
     <div class="drawing-container">
   <img src="pandas.jpg" id="pandadrawing">
-  <img src="fruits.jpg">
-  <img src="owl.jpg">
+  <img src="fruits.jpg" id="fruitdrawing">
+  <img src="owl.jpg" id="owldrawing">
 </div>
 <div class="drawing-container">
-        <img src="pandarunning.jpg">
-        <img src="abstract.jpg">
-        <img src="person.jpg">
+        <img src="pandarunning.jpg" id="runningdrawing">
+        <img src="abstract.jpg" id="abstractdrawing">
+        <img src="person.jpg" id="persondrawing">
       </div>
 </div>
   <div class="two-row-container">
-      <img src="frog.jpg"><img src="dragon.jpg">
+      <img src="frog.jpg" id="frog"><img src="dragon.jpg" id="dragon">
   </div>
 </div>
 <br>
@@ -231,15 +314,67 @@ z-index:1000000000000000000000000000000000;
 
 </footer>
 
+
 <script>
-var panda=document.getElementById("pandadrawing");
-panda.addEventListener('click',function(){
-  panda.style.width="74vw";
-  panda.style.height="auto";
-  panda.style.position="absolute";
-  panda.style.left="8vw";
-})
-</script>
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var panda = document.getElementById("pandadrawing");
+var fruits = document.getElementById("fruitdrawing");
+var owl = document.getElementById("owldrawing");
+var running = document.getElementById("runningdrawing");
+var different = document.getElementById("abstractdrawing");
+var person = document.getElementById("persondrawing");
+var frog = document.getElementById("frog");
+var dragon = document.getElementById("dragon");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+panda.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+  fruits.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+  owl.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+  }
+  running.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+  }
+  different.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+  person.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+  }
+  frog.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+      captionText.innerHTML = this.alt;}
+dragon.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}</script>
 </body>
 </html>
       
