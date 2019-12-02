@@ -54,7 +54,7 @@
   margin:auto
       }
       #intro{
-	  background-color:#121212c0;
+	  background-color:#121212cd;
 	  height:60%;
 	  padding:10%;
       }
@@ -109,14 +109,19 @@ z-index:10000;
       nav a:hover{
           font-weight: 900;
       }
-      #banner{
+      #top,#bottom{
         position:absolute;
         top:0px;
         width:100%;
         height:60%;
-        z-index:-1000;
       }
-    
+     #top{
+
+        z-index:-999;
+     }
+     #bottom{
+        z-index:-1000;
+     }
       #warning{
         display:none;
         width:100vw;
@@ -182,12 +187,12 @@ height:100vh;
 	  background:transparent;
 	  border:none;
       }
+ 
       #myImg {
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
 }
-
 #myImg:hover {opacity: 0.7;}
 
 /* The Modal (background) */
@@ -247,7 +252,8 @@ height:100vh;
           <a href="#web">Coding Projects</a>
           <a href="#drawings">Drawings</a>
       </nav>
-      <img src="bamboo.jpg" id="banner">
+      <img src="pandabamboo2.png" id="bottom">
+      <img src="bamboo.jpg" id="top">
     <div id="intro">
     <h1><span class="orange">Welcome</span> To Ryan The Panda's Website</h1>
 <p class="intro">I'm Ryan. I love pandas. I like coding and making websites. I also enjoy drawing.</p>
@@ -316,65 +322,91 @@ height:100vh;
 
 
 <script>
-var modal = document.getElementById("myModal");
+ var modal = document.getElementById("myModal");
 
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var panda = document.getElementById("pandadrawing");
-var fruits = document.getElementById("fruitdrawing");
-var owl = document.getElementById("owldrawing");
-var running = document.getElementById("runningdrawing");
-var different = document.getElementById("abstractdrawing");
-var person = document.getElementById("persondrawing");
-var frog = document.getElementById("frog");
-var dragon = document.getElementById("dragon");
-var modalImg = document.getElementById("img01");
-var captionText = document.getElementById("caption");
-panda.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-  fruits.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-  owl.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-  }
-  running.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-  }
-  different.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-  person.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-  }
-  frog.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-      captionText.innerHTML = this.alt;}
-dragon.onclick = function(){
-  modal.style.display = "block";
-  modalImg.src = this.src;
-  captionText.innerHTML = this.alt;
-}
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+ // Get the image and insert it inside the modal - use its "alt" text as a caption
+ var frame = 0;
+// console.log(top)
+ var bottom = document.getElementById("bottom");
+ var tpanda = document.getElementById("top");
+ frame = 0;
+ var inverse= 1;
+ var turn = 0;
+ var animation=setInterval(function(){
+ if(frame < 1 && turn === 0){
+	 frame+=0.01;
+     inverse-=0.01;}
+     else if (frame < 0.01 && turn === 1){
+	 turn=0;
+     }
+     else{
+	 turn = 1
+	 frame-=0.01;
+	 inverse+=0.01;
+     }
+	 tpanda.style.opacity = inverse;
+	 
+ //console.log(top)
+	 bottom.style.opacity = frame;
+	 //console.log(top)
+    
+ },65)
+ var panda = document.getElementById("pandadrawing");
+ var fruits = document.getElementById("fruitdrawing");
+ var owl = document.getElementById("owldrawing");
+ var running = document.getElementById("runningdrawing");
+ var different = document.getElementById("abstractdrawing");
+ var person = document.getElementById("persondrawing");
+ var frog = document.getElementById("frog");
+ var dragon = document.getElementById("dragon");
+ var modalImg = document.getElementById("img01");
+ var captionText = document.getElementById("caption");
+ panda.onclick = function(){
+     modal.style.display = "block";
+     modalImg.src = this.src;
+     captionText.innerHTML = this.alt;
+ }
+ fruits.onclick = function(){
+     modal.style.display = "block";
+     modalImg.src = this.src;
+     captionText.innerHTML = this.alt;
+ }
+ owl.onclick = function(){
+     modal.style.display = "block";
+     modalImg.src = this.src;
+     captionText.innerHTML = this.alt;
+ }
+ running.onclick = function(){
+     modal.style.display = "block";
+     modalImg.src = this.src;
+     captionText.innerHTML = this.alt;
+ }
+ different.onclick = function(){
+     modal.style.display = "block";
+     modalImg.src = this.src;
+     captionText.innerHTML = this.alt;
+ }
+ person.onclick = function(){
+     modal.style.display = "block";
+     modalImg.src = this.src;
+     captionText.innerHTML = this.alt;
+ }
+ frog.onclick = function(){
+     modal.style.display = "block";
+     modalImg.src = this.src;
+     captionText.innerHTML = this.alt;}
+ dragon.onclick = function(){
+     modal.style.display = "block";
+     modalImg.src = this.src;
+     captionText.innerHTML = this.alt;
+ }
+ // Get the <span> element that closes the modal
+ var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() { 
-  modal.style.display = "none";
-}</script>
+ // When the user clicks on <span> (x), close the modal
+ span.onclick = function() { 
+     modal.style.display = "none";
+ }</script>
 </body>
 </html>
       
