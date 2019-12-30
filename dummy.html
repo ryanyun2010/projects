@@ -1,0 +1,389 @@
+<html><head>
+        <link href="https://fonts.googleapis.com/css?family=Amiri&amp;display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="Logo.png">
+    <style>
+      
+            *{
+		margin:0;
+		box-sizing: border-box;
+        font-family: 'Amiri',serif;
+      }
+      h1{
+	  text-align:center;
+	  color:#EEF1EF;
+	  margin-bottom:3%;
+      }
+      h2{
+	  text-align:center;
+	  background-color: #FC651C;
+	  color:#EEF1EF;
+	  padding:10px;
+      }
+
+      .orange{
+        color:#FC651C;
+      }
+      .three-row-light{
+	  background-color:#cfcfcf;
+      }
+      .three-row-dark{
+	  background-color:#afafaf;
+      }
+      .three-row{
+	  text-align:center;
+	  
+	  line-height:25px;
+	  display:inline-block;
+	  height:60vh;
+	  width:32vw;
+	  font-size:2rem;
+      }
+      .three-row a{
+          text-decoration: none;
+          color:#000000;
+          font-size:2.5rem;
+      }
+     a{
+        text-decoration: none;
+     } 
+      .three-row-container,.drawing-container{
+          display:grid;
+          grid-template-columns: auto auto auto;
+  grid-template-rows: 60%;
+  margin:auto
+      }
+      #intro{
+	  background-color:#121212cd;
+	  height:60%;
+	  padding:10%;
+      }
+      .intro{
+	  padding:0px;
+	  text-align:center;
+	  color:#EEF1EF;
+      font-size: 1.5rem;
+      }
+      #web{
+	  width:100%;
+	  background-color:#EEF1EF;
+      }
+      h1{
+	  font-size:3.5rem;
+      }
+      h2{
+	  font-size:2.5rem;
+      }
+      img{
+          width:100%;
+      }
+      .three-row p {
+          font-size:1rem;
+          color:#343434;
+
+      }
+      a:hover{
+        color:#FC651C;
+        font-weight:bold;
+        
+      }
+      .two-row-container{
+          display:grid;
+          grid-template-columns:50% 50%;
+  grid-template-rows: 35%;
+  margin:auto
+      }
+    
+      nav{
+        
+        width:100%; position:fixed; top:0px;height:3.5%; text-align:right;
+        background-color:#33333399;
+z-index:10000;
+      }
+      nav a{
+        font-family: arial;
+        color:white;
+        margin-right:20px;
+        font-size:0.8rem;
+      }
+      nav a:hover{
+          font-weight: 900;
+      }
+      #top,#bottom{
+        position:absolute;
+        top:0px;
+        width:100%;
+        height:60%;
+      }
+     #top{
+
+        z-index:-999;
+     }
+     #bottom{
+        z-index:-1000;
+     }
+      #warning{
+        display:none;
+        width:100vw;
+        height:100vh;
+        background-color:#000000e0;
+        position:fixed;
+      }
+
+      #warning h4{
+        font-size:3.5rem;
+        width:40%;
+        text-align:center;
+        right:30%;
+        top:30%;
+        position:fixed;
+        color:white;
+      }
+      #logo{
+        width:5%;
+        margin-left:47.5%;
+      }
+      footer{
+        height:3%;
+        
+      }
+      footer p{
+        text-align:center;
+        color:#999999;
+        margin-top:10px;
+        margin-bottom:10px;
+      }
+      #fadeout{
+	  background-color:#111111ef;
+	  height:100vh;
+	  position:fixed;
+	  top:0px;
+	  left:0px;
+	  width:100vw;
+	  z-index:99999;
+      }
+      #fullscreenimage{
+height:100vh;
+	  position:fixed;
+	  top:0px;
+	  left:0px;
+	  width:100vw;
+      }
+      #full{
+	  height:90vh;
+	  width:auto;
+	  left:5vw;
+	  position:fixed;
+	  top:5vw;
+	  z-index:9999999;
+      }
+      #close{
+	  position:fixed;
+	  right:3vw;
+	  top:3vw;
+	  font-size:2rem;
+	  z-index:10000000;
+	  color:red;
+	  background:transparent;
+	  border:none;
+      }
+ 
+      #myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+      @media screen and (orientation:portrait) {
+        div#warning{
+          display:block;
+        }
+      }
+          </style>
+    </head>
+  <body>
+    <div id="myModal" class="modal">
+  <span class="close">×</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+    </div>
+    
+    <div id="warning"><h4>Use In Landscape Orientation</h4></div>
+	       <nav>
+          <a href="#intro">Home</a>
+          <a href="#web">Coding Projects</a>
+          <a href="#drawings">Drawings</a>
+      </nav>
+      <!--IMG CHANGING BACKGROUND SPOT-->
+
+    <div id="intro">
+    <h1><span class="orange">Welcome</span> To Ryan The Panda's Website</h1>
+<p class="intro">I'm Ryan. I love pandas. I like coding and making websites. I also enjoy drawing.</p>
+    <!--<img src="panda.gif" id="picon">!-->
+    </div>
+ 
+<div id="web">
+  <h2>Coding Projects</h2>
+  <div class="three-row-container">
+    <div class="three-row three-row-light">
+        <br>
+        <br>
+        <a href="https://ryan1.wisen.space/ryanpanda.html">Panda Land</a><br><br><br>
+        <p>Panda Land is a game where you collect things. You can collect stick of bamboo and guns. You take damage if you go under bushes<br>
+            Controls:<br>
+            up,down,left,right : Movement<br>
+            1,2 : Slot 1 and 2
+            </p>
+    </div>
+    
+	<div class="three-row three-row-dark">
+        <br>
+        <br>
+        <a href="https://ryanyun2010.github.io/connect-four/">Connect Four</a><br><br><br>
+        <p>
+                Connect Four has gravity so you can only place them at the bottom.<br>
+                Controls:<br>
+                left,right : Movement<br>
+                enter/return : Drop
+            </p>
+    </div>
+    
+	<div class="three-row three-row-light">
+        <br>
+        <br>
+        <a href="https://ryan1.wisen.space/emo.html">Emotion Detector</a><br><br><br>
+        <p>Emotion Detector detects your emotion. Press start video to start your camera. Then when you want it to analyze you emotion click capture. If you want it to reanalyze the click retake and capture again. The first time you capture it may take 20-40 seconds</p>
+    </div>
+</div>
+
+</div>       
+<div id="drawings">
+    <h2>Drawings</h2>
+    <div class="drawing-container">
+  <img src="pandas.jpg" id="pandadrawing">
+  <img src="fruits.jpg" id="fruitdrawing">
+  <img src="owl.jpg" id="owldrawing">
+</div>
+<div class="drawing-container">
+        <img src="pandarunning.jpg" id="runningdrawing">
+        <img src="abstract.jpg" id="abstractdrawing">
+        <img src="person.jpg" id="persondrawing">
+      </div>
+</div>
+  <div class="two-row-container">
+      <img src="frog.jpg" id="frog"><img src="dragon.jpg" id="dragon">
+  </div>
+
+<br>
+<footer>
+  <img src="Logo.png" id="logo" alt="ryan panda">
+  <br>
+  <p>Copyright 2019 Ryan Yun</p>
+
+</footer>
+
+
+<script>
+ 
+ var modal = document.getElementById("myModal");
+
+ // Get the image and insert it inside the modal - use its "alt" text as a caption
+
+ 
+ var panda = document.getElementById("pandadrawing");
+ var fruits = document.getElementById("fruitdrawing");
+ var owl = document.getElementById("owldrawing");
+ var running = document.getElementById("runningdrawing");
+ var different = document.getElementById("abstractdrawing");
+ var person = document.getElementById("persondrawing");
+ var frog = document.getElementById("frog");
+ var dragon = document.getElementById("dragon");
+ var modalImg = document.getElementById("img01");
+ var captionText = document.getElementById("caption");
+ panda.onclick = function(){
+     modal.style.display = "block";
+     modalImg.src = this.src;
+     captionText.innerHTML = this.alt;
+ }
+ fruits.onclick = function(){
+     modal.style.display = "block";
+     modalImg.src = this.src;
+     captionText.innerHTML = this.alt;
+ }
+ owl.onclick = function(){
+     modal.style.display = "block";
+     modalImg.src = this.src;
+     captionText.innerHTML = this.alt;
+ }
+ running.onclick = function(){
+     modal.style.display = "block";
+     modalImg.src = this.src;
+     captionText.innerHTML = this.alt;
+ }
+ different.onclick = function(){
+     modal.style.display = "block";
+     modalImg.src = this.src;
+     captionText.innerHTML = this.alt;
+ }
+ person.onclick = function(){
+     modal.style.display = "block";
+     modalImg.src = this.src;
+     captionText.innerHTML = this.alt;
+ }
+ frog.onclick = function(){
+     modal.style.display = "block";
+     modalImg.src = this.src;
+     captionText.innerHTML = this.alt;}
+ dragon.onclick = function(){
+     modal.style.display = "block";
+     modalImg.src = this.src;
+     captionText.innerHTML = this.alt;
+ }
+ // Get the <span> element that closes the modal
+ var span = document.getElementsByClassName("close")[0];
+
+ // When the user clicks on <span> (x), close the modal
+ span.onclick = function() { 
+     modal.style.display = "none";
+ }</script>
+
+
+      
+</body></html>

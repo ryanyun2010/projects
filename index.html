@@ -53,6 +53,8 @@
   grid-template-rows: 60%;
   margin:auto
       }
+    footer{ 
+      margin-top:40px}
       #intro{
 	  background-color:#121212cd;
 	  height:60%;
@@ -231,7 +233,16 @@ height:100vh;
   text-decoration: none;
   cursor: pointer;
 }
-
+iframe{
+    width:60vw;
+    height:40vh;
+    margin-left:20vw;
+    margin-top:0.2vh;
+    margin-bottom:0.1vh;
+}
+#video{
+background-color:#000000
+}
       @media screen and (orientation:portrait) {
         div#warning{
           display:block;
@@ -251,15 +262,25 @@ height:100vh;
           <a href="#intro">Home</a>
           <a href="#web">Coding Projects</a>
           <a href="#drawings">Drawings</a>
+          <a href="#video">My Page Video</a>
       </nav>
+
+      
       <img src="pandabamboo2.png" id="bottom">
       <img src="bamboo.jpg" id="top">
+
+      
     <div id="intro">
     <h1><span class="orange">Welcome</span> To Ryan The Panda's Website</h1>
 <p class="intro">I'm Ryan. I love pandas. I like coding and making websites. I also enjoy drawing.</p>
     <!--<img src="panda.gif" id="picon">!-->
     </div>
- 
+
+    <div id="video">
+ <h2>My Page Video</h2>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/6ehGlQ7RZiA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 <div id="web">
   <h2>Coding Projects</h2>
   <div class="three-row-container">
@@ -312,8 +333,7 @@ height:100vh;
       <img src="frog.jpg" id="frog"><img src="dragon.jpg" id="dragon">
   </div>
 </div>
-<br>
-<footer>
+  <footer>
   <img src="Logo.png" id="logo" alt="ryan panda">
   <br>
   <p>Copyright 2019 Ryan Yun</p>
@@ -322,35 +342,46 @@ height:100vh;
 
 
 <script>
- var modal = document.getElementById("myModal");
 
- // Get the image and insert it inside the modal - use its "alt" text as a caption
- var frame = 0;
-// console.log(top)
- var bottom = document.getElementById("bottom");
- var tpanda = document.getElementById("top");
- frame = 0;
- var inverse= 1;
- var turn = 0;
+  
+  var modal = document.getElementById("myModal");
+
+
+
+
+
+  
+  
+ var bPanda = document.getElementById("bottom");
+ var tPanda = document.getElementById("top");
+ var transparency = 0;
+ var select = 0;
  var animation=setInterval(function(){
- if(frame < 1 && turn === 0){
-	 frame+=0.01;
-     inverse-=0.01;}
-     else if (frame < 0.01 && turn === 1){
-	 turn=0;
+ if(transparency < 1 && select === 0){
+	 transparency+=0.01;
+}
+     else if (transparency < 0.01 && select === 1){
+	 select=0;
      }
      else{
-	 turn = 1
-	 frame-=0.01;
-	 inverse+=0.01;
+	 select = 1
+	 transparency-=0.01;
      }
-	 tpanda.style.opacity = inverse;
+	 tPanda.style.opacity = 1-transparency;
 	 
- //console.log(top)
-	 bottom.style.opacity = frame;
-	 //console.log(top)
+	 bPanda.style.opacity = transparency;
     
- },65)
+ },30)
+
+
+
+
+
+
+
+  
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  // console.log(top)
  var panda = document.getElementById("pandadrawing");
  var fruits = document.getElementById("fruitdrawing");
  var owl = document.getElementById("owldrawing");
