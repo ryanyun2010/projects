@@ -30,7 +30,7 @@
       .three-row-dark{
 	  background-color:#afafaf;
       }
-      .three-row{
+     .three-row{
 	  text-align:center;
 	  
 	  line-height:25px;
@@ -111,6 +111,17 @@ z-index:10000;
       nav a:hover{
           font-weight: 900;
       }
+
+
+
+
+      video{
+	  width:50vw;
+	  margin-left:25vw;
+      }
+      #video{
+	  background:linear-gradient(45deg,#111,#3d3d3d,#111)
+      } 
       #top,#bottom{
         position:absolute;
         top:0px;
@@ -124,6 +135,17 @@ z-index:10000;
      #bottom{
         z-index:-1000;
      }
+
+
+
+
+
+
+
+
+
+
+     
       #warning{
         display:none;
         width:100vw;
@@ -233,16 +255,6 @@ height:100vh;
   text-decoration: none;
   cursor: pointer;
 }
-iframe{
-    width:60vw;
-    height:40vh;
-    margin-left:20vw;
-    margin-top:0.2vh;
-    margin-bottom:0.1vh;
-}
-#video{
-background-color:#000000
-}
       @media screen and (orientation:portrait) {
         div#warning{
           display:block;
@@ -265,9 +277,26 @@ background-color:#000000
           <a href="#drawings">Drawings</a>
       </nav>
 
+
+
+      
+
+
+
+
+
       
       <img src="pandabamboo2.png" id="bottom">
       <img src="bamboo.jpg" id="top">
+
+
+
+
+
+
+
+
+      
 
       
     <div id="intro">
@@ -278,7 +307,7 @@ background-color:#000000
 
     <div id="video">
  <h2>My Page Video</h2>
- <iframe width="560" height="315" src="https://www.youtube.com/embed/6ehGlQ7RZiA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ <video controls><source src="mypagefinal.mp4"></source></video>
 </div>
 
 <div id="web">
