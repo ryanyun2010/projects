@@ -24,34 +24,54 @@
       .orange{
         color:#FC651C;
       }
-      .three-row-light{
+      .web-light{
 	  background-color:#cfcfcf;
       }
-      .three-row-dark{
+      .web-dark{
 	  background-color:#afafaf;
       }
-     .three-row{
+     .web{
 	  text-align:center;
-	  
 	  line-height:25px;
 	  display:inline-block;
-	  height:60vh;
-	  width:32vw;
-	  font-size:2rem;
-      }
-      .three-row a{
-          text-decoration: none;
+	  font-size:1.2rem;
+	  margin:0;
+	  padding:1.5vw;
+     }
+     .web-1-1{
+	 grid-row:1;
+	 grid-column:1;
+     }
+     .web-1-2{
+	 grid-row:1;
+	 grid-column:2;
+     }
+     .web-2-1{
+	 grid-row:2;
+	 grid-column:1;
+     }
+     .web-2-2{
+	 grid-row:2;
+	 grid-column:2;
+     }
+      .web a{
+          text-decoration: underline;
           color:#000000;
-          font-size:2.5rem;
+          font-size:2rem;
       }
      a{
         text-decoration: none;
      } 
-      .three-row-container,.drawing-container{
+     .drawing-container{
           display:grid;
           grid-template-columns: auto auto auto;
   grid-template-rows: 60%;
   margin:auto
+      }
+     .web-container{
+          display:grid;
+          grid-template-columns: 50vw 50vw;
+  grid-template-rows: 40vh 40vh;
       }
     footer{ 
       margin-top:40px}
@@ -255,6 +275,12 @@ height:100vh;
   text-decoration: none;
   cursor: pointer;
 }
+#newproj{
+    font-weight:900;
+    color:red;
+    font-size:2rem;
+    margin-right:2vw;
+}
       @media screen and (orientation:portrait) {
         div#warning{
           display:block;
@@ -276,29 +302,8 @@ height:100vh;
           <a href="#web">Coding Projects</a>
           <a href="#drawings">Drawings</a>
       </nav>
-
-
-
-      
-
-
-
-
-
-      
-      <img src="pandabamboo2.png" id="bottom">
+     <img src="pandabamboo2.png" id="bottom">
       <img src="bamboo.jpg" id="top">
-
-
-
-
-
-
-
-
-      
-
-      
     <div id="intro">
     <h1><span class="orange">Welcome</span> To Ryan The Panda's Website</h1>
 <p class="intro">I'm Ryan. I love pandas. I like coding and making websites. I also enjoy drawing.</p>
@@ -312,8 +317,8 @@ height:100vh;
 
 <div id="web">
   <h2>Coding Projects</h2>
-  <div class="three-row-container">
-    <div class="three-row three-row-light">
+  <div class="web-container">
+    <div class="web web-light web-1-1">
         <br>
         <br>
         <a href="https://ryan1.wisen.space/ryanpanda.html">Panda Land</a><br><br><br>
@@ -324,7 +329,7 @@ height:100vh;
             </p>
     </div>
     
-	<div class="three-row three-row-dark">
+	<div class="web web-light web-2-2">
         <br>
         <br>
         <a href="https://ryanyun2010.github.io/connect-four/">Connect Four</a><br><br><br>
@@ -336,17 +341,26 @@ height:100vh;
             </p>
     </div>
     
-	<div class="three-row three-row-light">
+	<div class="web web-dark web-2-1">
         <br>
         <br>
         <a href="https://ryan1.wisen.space/emo.html">Emotion Detector</a><br><br><br>
         <p>Emotion Detector detects your emotion. Press start video to start your camera. Then when you want it to analyze you emotion click capture. If you want it to reanalyze the click retake and capture again. The first time you capture it may take 20-40 seconds</p>
+	</div>
+	
+	<div class="web web-dark web-1-2">
+        <br>
+        <br>
+	<span id="newproj">Newest</span>
+        <a href="https://ryan1.wisen.space/cookieclicker.html">Christmas Cookie Clicker</a><br><br><br>
+        <p>Christmas Cookie Clicker is where you click a cookie and get cookies to buy different items. In Christmas Cookie Clicker you can buy an elf, a reindeer or Santa's boots.</p>
     </div>
+
 </div>
 
 </div>       
 <div id="drawings">
-    <h2>Drawings</h2>
+    <h2 id="drawingheader">Drawings</h2>
     <div class="drawing-container">
   <img src="pandas.jpg" id="pandadrawing">
   <img src="fruits.jpg" id="fruitdrawing">
